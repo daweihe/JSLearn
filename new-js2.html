@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+
+    </style>
+</head>
+
+
+<body>
+
+</body>
+<script>
+    /*对于下面的每个练习， 假设您从以下programming对象开始。
+
+        var programming = {
+            languages：[“JavaScript”，“ Python”，“ Ruby”]，
+            isChallenging： true，
+            isRewarding： true，
+            difficult： 8，
+            jokes：“ http: //stackoverflow.com/questions/234075/what-is你最好的程序员笑话“
+        };
+        编写命令将语言“ Go” 添加到语言数组的末尾。
+        将难度改为价值7。
+        使用delete关键字， 写入命令从编程对象中删除笑话键。
+        编写命令以添加一个新的密钥isFun和一个值true给编程对象。
+        使用循环， 遍历语言数组和console.log所有的语言。
+        使用一个循环， console.log编程对象中的所有键。
+        使用一个循环， console.log编程对象中的所有值。*/
+
+    var programming = {
+        languages: ["JavaScript", "Python", "Ruby"],
+        isChallenging: true,
+        isRewarding: true,
+        difficult: 8,
+        jokes: "http: //stackoverflow.com/questions/234075/what-is你最好的程序员笑话",
+    };
+    programming.languages.push("Go");
+    programming.difficult = 7;
+    delete programming.jokes;
+    programming.isFun = true;
+    for (var i = 0; i < programming.languages.length; i++) {
+        console.log(programming.languages[i]);
+    }
+    for (var temo in programming) {
+        console.log(temo);
+    }
+    for (var temp in programming) {
+        console.log(programming[temp]);
+    }
+</script>
+
+</html>
