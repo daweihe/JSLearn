@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+
+    </style>
+</head>
+
+
+<body>
+
+</body>
+<script>
+    /* function myName() {
+              console.log("何大伟");
+        }
+        myName();*/
+
+
+
+    /*var favoriteFoods = ["比萨饼", "冰淇淋"];
+
+    function randomFood() {
+        var temp = Math.floor(Math.random() * favoriteFoods.length);
+        console.log(favoriteFoods[temp]);
+    }
+    randomFood();*/
+
+
+    var numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+    //打印奇数
+    /*function displayOddNumbers() {
+        for (var i = 0; i < numbers.length; i++) {
+            if (numbers[i] % 2 != 0) {
+                console.log(numbers[i]);
+            }
+        }
+    }
+    displayOddNumbers();*/
+
+
+    //打印偶数
+    /* function displayEvenNumbers() {
+         for (var i = 0; i < numbers.length; i++) {
+             if (numbers[i] % 2 == 0) {
+                 console.log(numbers[i]);
+             }
+         }
+     }
+     displayEvenNumbers();*/
+
+    //返回第一个奇数
+    /*function returnFirstEvenNumber() {
+        for (var i = 0; i < numbers.length; i++) {
+            if (numbers[i] % 2 != 0) {
+                return numbers[i];
+            }
+        }
+    }
+
+    var firstOdd = returnFirstEvenNumber();
+    console.log(firstOdd);*/
+
+
+    //返回第一个偶数
+    /* function returnFirstEvenNumber() {
+         for (var i = 0; i < numbers.length; i++) {
+             if (numbers[i] % 2 == 0) {
+                 return numbers[i];
+             }
+         }
+     }
+
+     var firstEven = returnFirstEvenNumber();
+     console.log(firstEven);*/
+
+
+    //返回数组的前半部分
+    /* function returnFirstHalf() {
+         var temp = [];
+         var count = 0;
+         for (var i = 0; i < numbers.length / 2; i++) {
+             temp[count++] = numbers[i];
+         }
+         return temp;
+     }
+
+
+     console.log(returnFirstHalf());*/
+
+    //返回数组的后半部分
+    function returnSecondHalf() {
+        var temp = [];
+        var count = 0;
+        for (var i = numbers.length / 2; i < numbers.length; i++) {
+            temp[count++] = numbers[i];
+        }
+        return temp;
+    }
+
+
+    console.log(returnSecondHalf());
+</script>
+
+</html>
