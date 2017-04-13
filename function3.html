@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    //第三、七、八、九题注意  第十题随意
+
+
+    //第一题
+    /*function diffence(num1, num2) {
+        return num1 - num2;
+    }
+    console.log(diffence(2, 2));
+    console.log(diffence(0, 2));*/
+
+
+    //第二题
+    /*function product(num1, num2) {
+        return num1 * num2;
+    }
+    console.log(product(2, 2));
+    console.log(product(0, 2));*/
+
+    //第三题
+    /* function printDay(num) {
+         var dates = {
+             1: "Sunday",
+             2: "Monday",
+             3: "Tuesday",
+             4: "Wednesday",
+             5: "Thursday",
+             6: "Friday",
+             7: "Saturday",
+         };
+         return dates[num];
+     }*/
+
+
+
+
+
+
+    //第四题
+    /*function lastElement(arr) {
+        return arr[arr.length - 1];
+    }
+    console.log(lastElement([1, 2, 3, 56, 7]));*/
+
+
+    //第五题
+    /* function numberCompare(num1, num2) {
+         if (num1 > num2) {
+             return "First is greater";
+         } else if (num1 < num2) {
+             return "Second is greater";
+         } else {
+             return "数字相等";
+         }
+     }
+     console.log(numberCompare(6, 1));*/
+
+    //第六题
+    /* function singleLetterCount(str1, str2) {
+         var count = 0;
+         for (var i = 0; i < str1.length; i++) {
+             if (str1[i] == str2) {
+                 count++;
+             }
+         }
+         return count;
+     }
+     console.log(singleLetterCount("dasmdfksskls", 'd'));*/
+
+    //第七题
+    /*function multipleLetterCount(str) {
+        var obj = {};
+        for (var i = 0; i < str.length; i++) {
+            if (!(str[i] in obj)) {
+                obj[str[i]] = 1;
+            } else {
+                obj[str[i]]++;
+            }
+        }
+        return obj;
+    }*/
+
+    //第八题
+    /* function arrayManipulation(arr, action, position, para) {
+         if (action == "remove" && position == "end") {
+             return arr.pop();
+         } else if (action == "remove" && position == "begain") {
+             return arr.shift();
+         } else if (action == "add" && position == "begain") {
+             arr.unshift(para);
+             return arr;
+         } else if (action == "add" && position == "end") {
+             arr.push(para);
+             return arr;
+         } else {
+             return "输出错误！";
+         }
+     }
+     console.log(arrayManipulation([1, 2, 3, 4], "add", "begain", 123));*/
+
+    //优化方法
+    /*function arrayManipulation(arr, command, position, val) {
+        if (command === 'remove') {
+            if (position === 'end') {
+                return arr.pop();
+            }
+            return arr.shift();
+        } else if (command === 'add') {
+            if (position === 'end') {
+                arr.push(val)
+                return arr;
+            }
+            arr.unshift(val)
+            return arr;
+        }
+    }
+*/
+
+
+    //第九题
+    /*function isPalindrome(str) {
+        var temp = true;
+        for (var i = 0; i < str.length / 2; i++) {
+            if (str[i] != str[str.length - 1 - i]) {
+                temp = false;
+            }
+        }
+        return temp;
+    }
+    console.log(isPalindrome("abccba"));*/
+    //优化方法
+    /*function isPalindrome(str) {
+        return str.toLowerCase().split('').reverse().join('') === str.toLowerCase();
+    }*/
+
+    //第十题
+
+    /*  function RPS() {
+
+          function determineComputer(num) {
+              if (num <= .33) return "rock";
+              else if (num <= .66) return "paper";
+              return "scissor";
+          }
+
+          var userChoice = prompt("Choose rock / paper or scissor").toLowerCase();
+          var computerChoice = determineComputer(Math.random());
+
+
+          var answers = ["rock", "paper", "scissor"];
+
+          if (!userChoice || answers.indexOf(userChoice) === -1) {
+              return "Please select a valid option";
+          }
+
+          if (userChoice === computerChoice) return "Tie!";
+
+          if (userChoice === "rock" && computerChoice === "paper") return "You lose, computer picked " + computerChoice;
+          if (userChoice === "paper" && computerChoice === "scissor") return "You lose, computer picked " + computerChoice;
+          if (userChoice === "scissor" && computerChoice === "rock") return "You lose, computer picked " + computerChoice;
+
+          return "You win! Computer picked " + computerChoice;
+      }*/
+</script>
+
+</html>

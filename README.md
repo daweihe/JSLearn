@@ -243,73 +243,6 @@ typeof 5; "数字"
 			console.log("键不存在于对象中");
 		}
 		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-	
-	
-	
-
-
-
-
-
-
 
 函数部分：
 函数参数不同于传统函数，不需要声明类型，因为JS是弱类型语言。
@@ -324,5 +257,81 @@ typeof 5; "数字"
       转小写函数：toUpperCase()
 
 	charCodeAt()  //返回字符串指定位置的Unicode编码,第一个字符位置为0 
+
+匿名函数与声明提升
+
+函数有两种创建办法：
+函数声明
+	1、function declareFunction () {
+			return "我是一个函数声明";
+	   }
+函数表达式	   
+	2、var expression = function () {
+			return "我是一个函数表达式";
+	   }
+	   
+	   
+IIFE：立即调用功能表达式
+	(function () {
+		var person = "Elie";
+		return person;
+	})();
+	
+	立即调用的函数表达式（简称为IIFE）是写入后立即被调用的函数。
+	
+	
+
+提升
+	因为JS在执行任何代码之前处理变量声明（和一般声明），所以在代码中的任何地方声明一个变量都等同于在顶端声明变量。这也意味着变量可以在声明之前被使用。
+	
+	使用var声明的变量将被提升至所在环境的顶端
+	
+	
+	函数声明也是如此：
+	
+	sayHi("Matt"); //Hello Matt
+
+	function  sayHi(name){
+		return  "Hello" + name;
+	}//此函数声明提升至顶端
+	
+	函数表达式不同
+	sayHi（"Matt"）; //TypeEorr！
+
+	var  sayHi = function（name）{
+		 return  "Hello" + name;
+	}
+	
+	上面的代码相当于
+	var sayHi;
+	sayHi（"Matt"）; //TypeEorr！
+
+	sayHi = function（name）{
+		 return  "Hello" + name;
+	}
+	
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
