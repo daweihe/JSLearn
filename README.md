@@ -190,6 +190,7 @@ typeof 5; "数字"
 	
 	
 五、对象
+	注意创建对象的方式  1、var obj = new Object();                 2、var obj = {};
 	对象允许我们将键映射到值
 	例：
 		var firstObj = {

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+
+	//注意创建对象的方式  1、var obj = new Object();                 2、var obj = {};
+    var nestedData = {
+        innerData: {
+            order: ["first", "second", "third"],
+            snacks: ["chips", "fruit", "crackers"],
+            numberData: {
+                primeNumber: [2, 3, 5, 7, 11],
+                fibonnaci: [1, 1, 2, 3, 5, 8, 13]
+            },
+            addSnack: function(snack) {
+                this.snacks.push(snack);
+                return this;
+            }
+        }
+    }
+
+    var targetArr = nestedData.innerData.numberData.primeNumber;
+    for (var i = 0; i < targetArr.length; i++) {
+        console.log(targetArr[i]);
+    }
+
+    var targetArr = nestedData.innerData.numberData.fibonnaci;
+    for (var i = 0; i < targetArr.length; i++) {
+        console.log(targetArr[i]);
+    }
+
+    console.log(nestedData.innerData.order[1]);
+
+    nestedData.innerData.addSnack("chocolate");
+
+    //this代表下一个对象
+
+
+
+    var nestedObject = {
+        speakers: [{
+            name: "Elie"
+        }, {
+            name: "Tim"
+        }, {
+            name: "Matt"
+        }],
+        data: {
+            continents: {
+                europe: {
+                    countries: {
+                        switzerland: {
+                            capital: "Bern",
+                            population: 8000000
+                        }
+                    }
+                }
+            },
+            languages: {
+                spanish: {
+                    hello: "Hola"
+                },
+                french: {
+                    hello: "Bonjour"
+                }
+            }
+        }
+    }
+
+    function addSpeaker(value) {
+        nestedObject.speakers.push({
+            name: value
+        })
+
+    }
+    addSpeaker("name", "dawei");
+
+    function addLanguage(languageType, value) {
+        var obj = new Object();
+        obj.hello = value;
+        nestedObject.data.languages[languageType] = obj;
+        nestedObject.data.languages[languageType] = {
+            hello: value
+        }
+    }
+    addLanguage("Chailese", "你好");
+
+    function addCountry(countryName, newCapital, newPopulation2) {
+        var target = nestedObject.data.continents.europe.countries;
+        target[countryName] = {
+            capital: newCapital,
+            population: newPopulation2
+        }
+        console.log(target);
+    }
+    addCountry("YinGuo", "Lendon", 9000000);
+</script>
+
+</html>

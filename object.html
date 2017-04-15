@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+<script>
+    var instructorData = {
+        name: "Elie",
+        additionalData: {
+            Instructor: true,
+            favoriteHobbies: ["Playing Cello", "Tennis", "Coding"],
+            moreDetails: {
+                favoriteBasketballTeam: "New York knicks",
+                numberOfSiblings: 3,
+                isYoungest: true,
+                hometown: {
+                    city: "West Orange",
+                    state: "NJ"
+                },
+                citiesLivedIn: ["Seattle", "Providence", "New York"]
+            }
+        }
+    };
+
+
+    function displayCities() {
+        var arr = instructorData.additionalData.moreDetails.citiesLivedIn;
+
+        for (var i = 0; i < arr.length; i++) {
+            console.log(arr[i]);
+        }
+    }
+    displayCities();
+
+    function displayHometownData() {
+        var obj = instructorData.additionalData.moreDetails.hometown;
+        for (var key in obj) {
+            console.log(obj[key]);
+        }
+    }
+    displayHometownData();
+
+    function addDetail(key, value) {
+        var target = instructorData.additionalData.moreDetails;
+        target[key] = value;
+        return target;
+    }
+
+    console.log(addDetail("isHilarious", true));
+
+    console.log(addDetail("previousApartments", ["Mission", "North Beach", "Nob Hill"]));
+
+    function removeDetail(key) {
+        var detailsObject = instructorData.additionalData.moreDetails;
+        var valueToBeRemoved = detailsObject[key];
+        delete detailsObject[key];
+        return valueToBeRemoved;
+    }
+    console.log(removeDetail("citiesLivedIn"));
+</script>
+
+</html>
