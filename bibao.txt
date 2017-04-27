@@ -1,0 +1,94 @@
+什么是闭包？
+	闭包：一个函数能够访问一个变量 这个变量来自于一个已经返回的父函数
+	
+由于JavaScript的内部工作原理，即使该函数已返回，函数也能记住函数中定义的变量。
+
+闭包的使用实例
+	使用闭包创建私有变量、或者是不能被直接访问的变量
+	例子：
+		function defineAge(){
+			var age = 28;
+			return function growUp(){
+				return ++age;
+			}
+		}
+
+		var ageOnce = defineAge();
+		ageOnce(); // 29
+		ageOnce(); // 30
+		
+		这里能够访问age变量的只有函数defineAge和函数growUp，这个函数通过闭包访问变量age。但是此时age是被保护的，所以没有人可以访问它。所以我们说growUp已经关闭了defineAge的范围。
+		
+
+模块
+	这是一个好方法，将所有数据包含在IIFE中，包括不能被全局变量访问的私有数据
+		var instructorModuleRefactored = (function createInstructors(){
+		var instructors = ["Elie", "Matt", "Tim"];
+		function displayAllInstructors(){
+			return instructors;
+		}
+		function addNewInstructor(instructor){
+			instructors.push(instructor);
+			return instructors;
+		}
+		return {
+			showInstructors: displayAllInstructors,
+			addInstructor: addNewInstructor
+		}
+	})();
+	
+		
+		
+		
+		
+
+
+参数数组(不完全是数组)
+	arguments
+	说它是数组是因为可以使用[]访问，有length属性
+	说它不是数组是因为它不能使用数组的push()等函数
+	function logAll(){
+    	    console.log(arguments);
+	}
+
+	logAll(2,2); // [2,2]
+
+	function displayFirstArgument(){
+		return arguments[0];
+	}
+
+	displayFirstArgument(10,20); // [10]
+		
+		
+	
+	
+	function add() {
+    	   var total = 0;
+           for (var i = 0; i < arguments.length; i++) {
+              total += arguments[i]; // this is shorthand for total = total + arguments[i]
+           }
+           return total;
+	}
+
+	add(1,2,3); // 6
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    /* try {
+                if (Math.random() >= 0.5) {
+                    throw "让我们制造一个错误！";
+                }
+                console.log("呜呜呜.....我们做到了！");
+                console.log("如果随机数字小于5，我们只能到这里");
+            } catch (e) {
+                console.log("错误是", e);
+                console.log("我们只能在这里抛出一个错误（随机数大于.5）");
+            }
+            console.log("Moving on ....");*/
+
+
+    try {
+        if (Math.random() >= 0.5) {
+            undefined();
+        }
+        console.log("额，我们做了");
+    } catch (e) {
+        console.log("我们没有这样做，错误信息是", e.message);
+    } finally {
+        console.log("无论如何我们都会看到这个声明！");
+    }
+</script>
+
+</html>

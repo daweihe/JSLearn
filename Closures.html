@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    function outer() {
+        var count = 0;
+        return function inner() {
+            return count++;
+        }
+    }
+    var firstCounter = outer();
+    console.log(firstCounter());
+    console.log(firstCounter());
+    console.log(firstCounter());
+    console.log(firstCounter());
+    console.log(firstCounter());
+</script>
+
+</html>

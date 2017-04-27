@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    /*function countDown(time) {
+                                                                                                                                                                                    var timer = setInterval(function() {
+                                                                                                                                                                                        time--;
+                                                                                                                                                                                        if (time > 0) {
+                                                                                                                                                                                            console.log(time);
+                                                                                                                                                                                        } else {
+                                                                                                                                                                                            clearInterval(timer);
+                                                                                                                                                                                            console.log("DONE");
+                                                                                                                                                                                        }
+                                                                                                                                                                                    }, 1000);
+                                                                                                                                                                                }
+                                                                                                                                                                                countDown(4);*/
+
+    /*  function randomGame() {
+          var count = 0;
+          var si = setInterval(function() {
+              var random = Math.random();
+              count++;
+              if (random > 0.75) {
+                  clearInterval(si);
+                  console.log(random + "----" + count);
+              } else {
+                  console.log(random + "---不是");
+              }
+          }, 1000);
+      }
+      randomGame();*/
+
+    //判断是否为奇数
+    function isOdd(num) {
+        if (num % 2 != 0) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+    //判断是否为偶数
+    function isEven(num) {
+        if (num % 2 == 0) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    //判断是否为素数
+    function isPrime(num) {
+        var temp = true;
+        for (var i = 2; i < num; i++) {
+            if (num % i == 0) {
+                temp = false;
+            }
+        }
+        return temp;
+    }
+
+
+    function numberFact(num, fn) {
+        return fn(num);
+    }
+
+
+    function findIndex(arr, fn) {
+        for (var i = 0; i < arr.length; i++) {
+            if (fn(arr[i])) {
+                return arr[i];
+            }
+        }
+    }
+    console.log(findIndex([8, 11, 4, 27], function(val) {
+        return val >= 10
+    }));
+    console.log(findIndex([8, 11, 4, 27], function(val) {
+        return val === 7
+    }));
+
+    function specialMultiply(a, b) {
+        if (arguments.length == 1) {
+            return function(b) {
+                return a * b;
+            }
+        }
+        return a * b;
+    }
+</script>
+
+</html>
